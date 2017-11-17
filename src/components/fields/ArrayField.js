@@ -35,7 +35,7 @@ function ArrayFieldDescription({ DescriptionField, idSchema, description }) {
 }
 
 function IconBtn(props) {
-  const { type = "default", icon, className, ...otherProps } = props;
+  const { type = "secondary", icon, className, ...otherProps } = props;
   return (
     <button
       type="button"
@@ -56,12 +56,12 @@ function DefaultArrayItem(props) {
   };
   return (
     <div key={props.index} className={props.className}>
-      <div className={props.hasToolbar ? "col-xs-9" : "col-xs-12"}>
+      <div className={props.hasToolbar ? "col-9" : "col-12"}>
         {props.children}
       </div>
 
       {props.hasToolbar && (
-        <div className="col-xs-3 array-item-toolbox">
+        <div className="col-3 array-item-toolbox">
           <div
             className="btn-group"
             style={{ display: "flex", justifyContent: "space-around" }}>
@@ -615,11 +615,11 @@ class ArrayField extends Component {
 function AddButton({ onClick, disabled }) {
   return (
     <div className="row">
-      <p className="col-xs-3 col-xs-offset-9 array-item-add text-right">
+      <p className="col-3 offset-9 array-item-add text-right">
         <IconBtn
           type="info"
           icon="plus"
-          className="btn-add col-xs-12"
+          className="btn-add col-12"
           tabIndex="0"
           onClick={onClick}
           disabled={disabled}
